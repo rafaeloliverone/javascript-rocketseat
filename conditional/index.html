@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course JS</title>
+</head>
+<body>
+    <script>
+
+        // function returnGenrer(genrer) {
+        //     if (genrer == 'M') {
+        //         return 'Male';
+        //     } else if (genrer == 'F') {
+        //         return 'Female';
+        //     } else {
+        //         return 'Other';
+        //     }
+        // }     
+
+        function returnGenrer(genrer) {
+            switch (genrer) {
+                case 'M':
+                    return 'Male';
+                case 'F':
+                    return 'Female';
+                default:
+                    return 'Other';
+            }
+        }       
+
+        let result = returnGenrer('F');
+
+        console.log(result);
+
+    </script>
+</body>
+</html>

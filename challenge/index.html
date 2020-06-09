@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course JS</title>
+</head>
+<body>
+    <script>
+
+        //  QUESTION 1 
+
+        const address = {
+            street: 'Rua dos pinheiros',
+            number: 1293,
+            city: 'São Paulo',
+            uf: 'SP'
+        }
+
+        function formatToText(object) {
+            var result = `The user live in ${object.street} / ${object.uf}, in the ${object.city} Nº ${object.number}`;
+            return result;
+        }
+
+        console.log(formatToText(address));
+
+
+        //  QUESTION 2
+
+        var pairsArray = [];
+
+        function pairs(initialNumber, finalNumber){
+            for (var x = initialNumber; x <= finalNumber; x++) {
+                if (x % 2 == 0) {
+                    pairsArray.push(x);
+                }
+            }
+            return pairsArray;
+        }
+        
+        console.log(pairs(1,20));
+
+
+        //  QUESTION 3
+
+        var skills = ['JavaScript', 'ReactJS', 'React Native'];
+
+        const found = skills.find(element => element == 'JavaScript');
+
+        if (found != undefined) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
+
+        var contain = skills.indexOf('JavaScript');
+        console.log(contain);
+
+        // QUESTION 4 
+
+        
+        function experience(years) {
+            var experience;
+
+            if (years <= 1) {
+                experience = 'Beginner';
+            } else if (years <= 3) {
+                experience = 'Intermediate';
+            } else if (years <= 6) {
+                experience = 'Advanced';
+            } else {
+                experience = 'Jedi Master';
+            }
+            return experience;
+        }
+
+        var result = experience(9);
+        console.log(result);
+
+        //  QUESTION 5
+
+        var users = [
+            {
+                name: "Lyanna",
+                skills: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                name: "Cecilia",
+                skills: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        var text = '';
+        for (let user of users) {
+            console.log(user);
+            text += `The ${user.name} has: ${user.skills} skills.\n`
+        }
+
+        console.log(text);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course JS</title>
+</head>
+<body>
+    <script>
+
+        var sex = 'Female', year = 26;
+
+        if (sex === 'Female' && year >= 18) {
+            console.log(true);
+        } else if (sex != 'Other') {
+            console.log('Other');
+        } else {
+            console.log(false);
+        }
+        
+        // -------------- 
+
+        var sex = 'F';
+
+        var male;
+
+        if (sex === 'M') {
+            male = true;
+        } else {
+            male = false;
+        }
+
+        console.log(male);
+
+        // --------------
+
+        var sex = 'M';
+
+        var female = (sex === 'M');
+        console.log(female);
+
+    </script>
+</body>
+</html>

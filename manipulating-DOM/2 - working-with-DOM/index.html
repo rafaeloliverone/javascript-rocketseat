@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course JS</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" name="name" id="name" />
+        <input type="text" name="test" id="test" />
+        <button class="button">Add</button>
+    </div>
+
+    <script>
+        
+        var input = document.querySelector('input[name=name]');
+        var btnElement = document.querySelector('button.button');
+
+        //  var collections = document.getElementsByTagName('input');
+        //  var inputs = document.querySelectorAll('input');
+
+        btnElement.onclick = function() {
+            var text = input.value;
+            alert(text);
+        }
+        
+    </script>
+</body>
+</html>

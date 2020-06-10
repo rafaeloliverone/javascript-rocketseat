@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course JS</title>
+</head>
+<body>
+
+    <div id="app"></div>
+    <button onclick="generatedSquad()">Click here to generate a new squad!</button>
+
+    <div id="list">
+        <ul>
+    
+        </ul>
+    </div>
+
+    <input type="text" id="name" />
+    <button onclick="submitList()">Add name in the List!</button>
+
+    <script>
+        var appElement = document.querySelector('#app');
+        appElement.style.display = 'flex';
+
+        // QUESTION 1
+        function generatedSquad() {
+            var divElement = document.createElement('div');
+            divElement.className = 'box';
+            divElement.style.width = '100px';
+            divElement.style.height = '100px';
+            divElement.style.margin = '10px';
+            divElement.style.backgroundColor = '#f00';
+
+            divElement.onmouseover = function() {
+                var randomColor = getRandomColor();
+                divElement.style.backgroundColor = randomColor;
+            };
+            
+            appElement.appendChild(divElement);
+        }
+
+        // QUESTION 2
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // QUESTION 3
+        var names = ['Walkiria', 'Julia', 'Rafael'];
+        var list = document.querySelector('#list ul');
+
+        function generateList() {
+
+            for (let name of names) {
+                    var newRow = document.createElement('li');
+                    var text = document.createTextNode(name);
+
+                    newRow.appendChild(text);
+                    list.appendChild(newRow);
+                }
+        }
+
+        generateList();
+
+        // QUESTION 4
+        function submitList() {
+            var inputName = document.getElementById('name');
+            var value = inputName.value;
+
+            names.push(value);
+            list.innerHTML = '';
+            inputName.value = '';
+
+            generateList();
+        }
+
+    </script>
+</body>
+</html>
